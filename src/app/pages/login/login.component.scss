@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 325px;
+}
+
+mat-form-field {
+    width: 50%;
+    padding: 10px;
+}
+
+mat-card-title {
+    padding: 20px;
+}
+
+.login-button {
+    width: 50%;
+}
