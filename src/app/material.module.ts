@@ -8,6 +8,7 @@ import { MatRadioModule } from "@angular/material/radio"
 import { MatSelectModule } from "@angular/material/select"
 import { MatInputModule } from "@angular/material/input"
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   exports: [
@@ -19,7 +20,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatRadioModule,
     MatSelectModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ]
 })
 
