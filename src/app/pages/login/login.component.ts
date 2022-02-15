@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       if(this.firebaseSrv.isLogin == true){
         this.router.navigate(["/home"])
       }
-    }, 1500)
+    }, 700)
   }
   
   getErrorMessage() {

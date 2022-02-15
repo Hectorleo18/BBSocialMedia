@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

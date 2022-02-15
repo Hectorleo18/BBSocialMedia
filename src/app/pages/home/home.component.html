@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="main">
+    <div class="grid">
+        <mat-card *ngFor="let quote of quotes">
+            <mat-card-title>Quote by: {{quote.author}}</mat-card-title>
+            <div>{{quote.quote}}</div>
+            <mat-card-actions align="end">
+                <button mat-button color="warn" (click)="openDialog(quote.quote_id)">Delete</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
