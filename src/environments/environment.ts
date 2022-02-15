@@ -12,7 +12,8 @@ export const environment = {
     messagingSenderId: "786285609347",
     appId: "1:786285609347:web:bb92ad39484bb192dcb6b6",
     measurementId: "G-N3VZLC2YDB"
-  }
+  },
+  baseURL: "https://www.breakingbadapi.com/api/"
 };
 
 
