@@ -12,10 +12,12 @@ export class HomeComponent implements OnInit {
   constructor(private firebaseSrv: FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
-    this.firebaseSrv.checkLogin()
-    if(this.firebaseSrv.isLogin == false){
-      this.router.navigate(["/"])
-    }
+    setTimeout(async()=>{
+      await this.firebaseSrv.checkLogin()
+      if(this.firebaseSrv.isLogin == false){
+        this.router.navigate(["/"])
+      }
+    }, 1500)
   }
 
 }

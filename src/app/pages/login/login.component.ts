@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
   constructor(private firebaseSrv: FirebaseService, private router: Router){ }
 
   ngOnInit(): void {
-    this.firebaseSrv.checkLogin()
-    if(this.firebaseSrv.isLogin == true){
-      this.router.navigate(["/home"])
-    }
+    setTimeout(async()=>{
+      await this.firebaseSrv.checkLogin()
+      if(this.firebaseSrv.isLogin == true){
+        this.router.navigate(["/home"])
+      }
+    }, 1500)
   }
   
   getErrorMessage() {
