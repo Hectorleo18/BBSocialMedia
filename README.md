@@ -1,6 +1,16 @@
 # BBSocialMedia
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+and Firebase.
+This project is a social media of the members of Breaking Bad and Better Call Saul.
+To get the data I used the [Breaking Bad API](https://breakingbadapi.com)
+
+## Run the project
+
+1. Install [Node JS](https://nodejs.org/es/).
+2. Install [Angular CLI](https://angular.io/cli). Open a terminal and writes `npm install -g @angular/cli`.
+3. Clone or download this repository.
+4. Open a terminal in the path of the repository and writes `npm install` and wait the installation.
 
 ## Development server
 
