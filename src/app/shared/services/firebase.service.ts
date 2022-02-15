@@ -19,6 +19,7 @@ export class FirebaseService {
   ) {  }
 
   isLogin:boolean = false
+  quotes = new Array()
 
   /**
    * Login with email and password
@@ -120,12 +121,19 @@ export class FirebaseService {
   }
 
   async getQuotes(){
-    return await this.db.firestore.collection('Quotes').get()
+    let quotes = await this.db.firestore.collection('Quotes').get()
+    quotes.docs.forEach(quote=>{
+      this.quotes.push(quote.data())
+    })
   }
 
   async getUsers(){
     return await this.db.firestore.collection('Users').get()
   }
 
+  async deleteQuote(quoteId:number){
+    let element = await this.db.firestore.collection('Quotes').where("quote_id","==",quoteId).get()
+    await this.db.firestore.collection('Quotes').doc(element.docs[0].id).delete()
+  }
 
 }
