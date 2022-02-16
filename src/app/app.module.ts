@@ -15,6 +15,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { AddComponent } from './shared/components/add/add.component';
+import { AddDialogComponent } from './shared/components/add-dialog/add-dialog.component';
+import { EditDialogComponent } from './shared/components/edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     HeaderComponent,
     ProfileComponent,
     LoginComponent,
-    DialogComponent
+    DialogComponent,
+    AddComponent,
+    AddDialogComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,

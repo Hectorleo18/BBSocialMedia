@@ -136,4 +136,25 @@ export class FirebaseService {
     await this.db.firestore.collection('Quotes').doc(element.docs[0].id).delete()
   }
 
+  async addQuote(author:string, quote:string){
+    let temp = await this.db.firestore.collection('Quotes').get()
+    let max = temp.docs.reduce((a,b)=>
+      (a.data().quote_id>b.data().quote_id) ? a : b
+    )
+    let id = max.data().quote_id + 1
+    await this.db.firestore.collection('Quotes').add({
+      author: author,
+      quote: quote,
+      quote_id: id
+    })
+  }
+
+  async editQuote(author:string, quote:string, quote_id:number){
+    let temp = await this.db.firestore.collection('Quotes').where("quote_id","==",quote_id).limitToLast(1).orderBy("author").get()
+    await this.db.firestore.collection('Quotes').doc(temp.docs[0].id).update({
+      author,
+      quote
+    })
+  }
+
 }

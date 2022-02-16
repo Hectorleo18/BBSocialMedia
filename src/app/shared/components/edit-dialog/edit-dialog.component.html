@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Edit Quote</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter the name of the author:</mat-label>
+        <input matInput placeholder="Jesse Pinkman" [formControl]="author" required>
+        <mat-error *ngIf="author.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter the quote</mat-label>
+        <input matInput placeholder="Hello!" [formControl]="quote" required>
+        <mat-error *ngIf="quote.invalid">{{getErrorMessageQuote()}}</mat-error>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close color="accent" (click)="editQuote(data)">Edit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>

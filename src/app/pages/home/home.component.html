@@ -1,10 +1,15 @@
 <div class="main">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Search an author</mat-label>
+        <input #search matInput placeholder="Jesse Pinkman" (keyup)="searchAuthor()" >
+    </mat-form-field>
     <div class="grid">
         <mat-card *ngFor="let quote of quotes">
             <mat-card-title>Quote by: {{quote.author}}</mat-card-title>
             <div>{{quote.quote}}</div>
             <mat-card-actions align="end">
-                <button mat-button color="warn" (click)="openDialog(quote.quote_id)">Delete</button>
+                <button mat-button color="primary" (click)="openEditDialog(quote)">Edit</button>
+                <button mat-button color="warn" (click)="openDeleteDialog(quote.quote_id)">Delete</button>
             </mat-card-actions>
         </mat-card>
     </div>
